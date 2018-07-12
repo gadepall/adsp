@@ -1,6 +1,0 @@
-\contentsline {section}{\numberline {1}Least Mean Squares(LMS) Algorithm}{1}
-\contentsline {section}{\numberline {2}Convergence of LMS Algorithm}{2}
-\contentsline {subsection}{\numberline {2.1}Convegenge in Mean for W(n)}{2}
-\contentsline {subsection}{\numberline {2.2}Convegenge in Mean-square sense}{3}
-\contentsline {section}{\numberline {3}Adaptive Noise Cancellation}{4}
-\contentsline {section}{\numberline {4}Adaptive Equalization}{5}
