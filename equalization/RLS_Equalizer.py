@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy
+from scipy.special import erfc
 
 def lms(u, d, M, step):
 
@@ -74,15 +74,18 @@ for i in range(snrlen):
 	#print nErr[i]		
 
 simBersoft=nErr/float(N)
-print simBersoft
-plt.plot(Eb_N0_dB,simBersoft)
+theoryBer=0.5*erfc(np.sqrt((10**(Eb_N0_dB/10.0))))
 
+print simBersoft
+plt.plot(Eb_N0_dB,theoryBer,'r',Eb_N0_dB,simBersoft,'b')
+plt.legend(['theory','Practical'],loc=1)
+#plt.plot(Eb_N0_dB,simBersoft,'b')
 plt.yscale('log')
 plt.ylabel('BitErrorRate')
 plt.xlabel('Eb/N0 in dB')
 plt.title('BER for BPSK in raised cosine pulse channel with RLS Adaptive Equalizer ')
 plt.grid()
-plt.savefig('SNR_BER.eps')
+plt.savefig('SNR_Vs_BER.eps')
 plt.show()
 
 

@@ -51,13 +51,13 @@ for i in range(snrlen):
 			nErr[i] +=1	
 
 
-#theoryBer=0.5*erfc(np.sqrt((10**(Eb_N0_dB/10.0))))
+theoryBer=0.5*erfc(np.sqrt((10**(Eb_N0_dB/10.0))))
 
 simBersoft=nErr/float(N)  
 #print simBersoft
-#plt.plot(Eb_N0_dB,theoryBer,'r',Eb_N0_dB,simBersoft,'b')
-#plt.legend(['theory','Practical'],loc=1)
-plt.plot(Eb_N0_dB,simBersoft,'b')
+plt.plot(Eb_N0_dB,theoryBer,'r',Eb_N0_dB,simBersoft,'b')
+plt.legend(['theory','Practical'],loc=1)
+#plt.plot(Eb_N0_dB,simBersoft,'b')
 plt.yscale('log')
 plt.ylabel('BitErrorRate')
 plt.xlabel('Eb/N0 in dB')
